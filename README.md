@@ -1,47 +1,47 @@
-﻿# OpenCode: Global AGENTS.md vs Config `instructions`
+# OpenCode: Global AGENTS.md vs Config `instructions`
 
-> **à¸§à¸±à¸•à¸–à¸¸à¸›à¸£à¸°à¸ªà¸‡à¸„à¹Œ:** à¹€à¸›à¸£à¸µà¸¢à¸šà¹€à¸—à¸µà¸¢à¸šà¸Šà¸±à¸”à¹€à¸ˆà¸™à¹€à¸žà¸·à¹ˆà¸­à¸•à¸±à¸”à¸ªà¸´à¸™à¹ƒà¸ˆà¸§à¹ˆà¸²à¸ˆà¸°à¸§à¸²à¸‡à¸à¸Žà¹„à¸«à¸™à¹„à¸§à¹‰à¸—à¸µà¹ˆà¹„à¸«à¸™
+> **วัตถุประสงค์:** เปรียบเทียบชัดเจนเพื่อตัดสินใจว่าจะวางกฎไหนไว้ที่ไหน
 
 ---
 
-## ðŸ“‹ Global AGENTS.md â€” à¹€à¸«à¸¡à¸²à¸°à¸à¸±à¸šà¸­à¸°à¹„à¸£
+## 📋 Global AGENTS.md — เหมาะกับอะไร
 
-| à¸à¸£à¸“à¸µà¹ƒà¸Šà¹‰à¸‡à¸²à¸™ | à¸•à¸±à¸§à¸­à¸¢à¹ˆà¸²à¸‡ |
+| กรณีใช้งาน | ตัวอย่าง |
 |------------|---------|
-| à¸à¸Žà¸žà¸·à¹‰à¸™à¸à¸²à¸™à¸—à¸µà¹ˆà¸•à¹‰à¸­à¸‡à¸šà¸±à¸‡à¸„à¸±à¸šà¸—à¸¸à¸à¹‚à¸›à¸£à¹€à¸ˆà¸à¸•à¹Œ | "à¸”à¸¶à¸‡à¹€à¸­à¸à¸ªà¸²à¸£à¸à¹ˆà¸­à¸™à¸•à¸­à¸šà¸„à¸³à¸–à¸²à¸¡ OpenCode à¸—à¸¸à¸à¸„à¸£à¸±à¹‰à¸‡" |
-| Code conventions à¸—à¸±à¹ˆà¸§à¹„à¸› | "à¸­à¸´à¸™à¹€à¸”à¸™à¸•à¹Œ 2 à¸Šà¹ˆà¸­à¸‡à¹€à¸§à¹‰à¸™, à¹„à¸¡à¹ˆà¹ƒà¸Šà¹‰ semicolon à¹ƒà¸™ JS/TS" |
-| Workflow à¸šà¸±à¸‡à¸„à¸±à¸š | "à¸£à¸±à¸™à¹€à¸—à¸ªà¸•à¹Œà¸à¹ˆà¸­à¸™à¸„à¸­à¸¡à¸¡à¸´à¸•", "à¸£à¸±à¸™ typecheck à¸«à¸¥à¸±à¸‡à¹à¸à¹‰à¹‚à¸„à¹‰à¸”" |
-| Architecture principles | "à¹€à¸à¹‡à¸š business logic à¹„à¸§à¹‰à¹ƒà¸™ domain layer, à¸­à¸¢à¹ˆà¸²à¹„à¸§à¹‰ controllers" |
-| Security rules | "à¸­à¸¢à¹ˆà¸² commit secrets, à¹ƒà¸Šà¹‰ environment variables" |
-| à¸ªà¸´à¹ˆà¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸²à¸à¹ƒà¸«à¹‰ agent à¸ˆà¸³à¸•à¸¥à¸­à¸”à¸à¸²à¸¥ | "à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸ à¸²à¸©à¸²à¹„à¸—à¸¢", "à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰ Windows PowerShell" |
+| กฎพื้นฐานที่ต้องบังคับทุกโปรเจกต์ | "ดึงเอกสารก่อนตอบคำถาม OpenCode ทุกครั้ง" |
+| Code conventions ทั่วไป | "อินเดนต์ 2 ช่องเว้น, ไม่ใช้ semicolon ใน JS/TS" |
+| Workflow บังคับ | "รันเทสต์ก่อนคอมมิต", "รัน typecheck หลังแก้โค้ด" |
+| Architecture principles | "เก็บ business logic ไว้ใน domain layer, อย่าไว้ controllers" |
+| Security rules | "อย่า commit secrets, ใช้ environment variables" |
+| สิ่งที่อยากให้ agent จำตลอดกาล | "ผู้ใช้ต้องการภาษาไทย", "ผู้ใช้ Windows PowerShell" |
 
-**à¸ˆà¸¸à¸”à¹€à¸”à¹ˆà¸™:** Hot reload (à¹à¸à¹‰à¹„à¸Ÿà¸¥à¹Œ â†’ à¹ƒà¸Šà¹‰à¹„à¸”à¹‰à¸—à¸±à¸™à¸—à¸µ), à¹‚à¸«à¸¥à¸”à¸à¹ˆà¸­à¸™à¸—à¸¸à¸à¸­à¸¢à¹ˆà¸²à¸‡, à¹ƒà¸Šà¹‰ Markdown à¸˜à¸£à¸£à¸¡à¸”à¸²
+**จุดเด่น:** Hot reload (แก้ไฟล์ → ใช้ได้ทันที), โหลดก่อนทุกอย่าง, ใช้ Markdown ธรรมดา
 
 ---
 
-## âš™ï¸ `instructions` Array à¹ƒà¸™ Config â€” à¹€à¸«à¸¡à¸²à¸°à¸à¸±à¸šà¸­à¸°à¹„à¸£
+## ⚙️ `instructions` Array ใน Config — เหมาะกับอะไร
 
-| à¸à¸£à¸“à¸µà¹ƒà¸Šà¹‰à¸‡à¸²à¸™ | à¸•à¸±à¸§à¸­à¸¢à¹ˆà¸²à¸‡ |
+| กรณีใช้งาน | ตัวอย่าง |
 |------------|---------|
-| à¸­à¹‰à¸²à¸‡à¸­à¸´à¸‡à¹„à¸Ÿà¸¥à¹Œà¹€à¸‰à¸žà¸²à¸°à¹€à¸ˆà¸²à¸°à¸ˆà¸‡à¸«à¸¥à¸²à¸¢à¹„à¸Ÿà¸¥à¹Œ | "CONTRIBUTING.md", "docs/coding-standards.md", "docs/git-workflow.md" |
-| à¹ƒà¸Šà¹‰ Glob pattern | "docs/guidelines/*.md", "**/RULES.md" |
-| à¸”à¸¶à¸‡à¸ˆà¸²à¸ Remote URL | "https://company.com/opencode-rules.md", "https://api.internal/rules?team=backend" |
-| Centralized rules à¸—à¸µà¹ˆ update à¹à¸šà¸š centralized | URL à¸Šà¸µà¹‰à¹„à¸› internal wiki â€” update à¸—à¸µà¹ˆà¸™à¸±à¹ˆà¸™à¸—à¸¸à¸à¸—à¸µà¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸­à¸±à¸›à¹€à¸”à¸• |
-| Supplement à¹€à¸‰à¸žà¸²à¸°à¹‚à¸›à¸£à¹€à¸ˆà¸à¸•à¹Œà¸šà¸™ global rules | Global AGENTS.md à¸¡à¸µà¸à¸Žà¸—à¸±à¹ˆà¸§à¹„à¸› â†’ instructions à¹€à¸žà¸´à¹ˆà¸¡à¹‚à¸›à¸£à¹€à¸ˆà¸à¸•à¹Œà¹€à¸‰à¸žà¸²à¸° |
-| à¸ªà¸´à¹ˆà¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸²à¸ version control à¹à¸¢à¸à¸ˆà¸²à¸ AGENTS.md | Config file à¸­à¸¢à¸¹à¹ˆà¹ƒà¸™ git, AGENTS.md à¸­à¸¢à¸¹à¹ˆà¹ƒà¸™ global (à¹„à¸¡à¹ˆ commit) |
+| อ้างอิงไฟล์เฉพาะเจาะจงหลายไฟล์ | "CONTRIBUTING.md", "docs/coding-standards.md", "docs/git-workflow.md" |
+| ใช้ Glob pattern | "docs/guidelines/*.md", "**/RULES.md" |
+| ดึงจาก Remote URL | "https://company.com/opencode-rules.md", "https://api.internal/rules?team=backend" |
+| Centralized rules ที่ update แบบ centralized | URL ชี้ไป internal wiki — update ที่นั่นทุกที่ได้รับอัปเดต |
+| Supplement เฉพาะโปรเจกต์บน global rules | Global AGENTS.md มีกฎทั่วไป → instructions เพิ่มโปรเจกต์เฉพาะ |
+| สิ่งที่อยาก version control แยกจาก AGENTS.md | Config file อยู่ใน git, AGENTS.md อยู่ใน global (ไม่ commit) |
 
-**à¸ˆà¸¸à¸”à¹€à¸”à¹ˆà¸™:** à¸£à¸­à¸‡à¸£à¸±à¸š URL/glob/multiple files, à¹‚à¸«à¸¥à¸”à¸«à¸¥à¸±à¸‡ AGENTS.md (override/extend à¹„à¸”à¹‰)
+**จุดเด่น:** รองรับ URL/glob/multiple files, โหลดหลัง AGENTS.md (override/extend ได้)
 
 ---
 
-## ðŸ”§ à¸•à¸±à¸§à¸­à¸¢à¹ˆà¸²à¸‡à¸ˆà¸£à¸´à¸‡: à¹ƒà¸Šà¹‰à¸„à¸¹à¹ˆà¸à¸±à¸™à¹„à¸”à¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¹„à¸£
+## 🔧 ตัวอย่างจริง: ใช้คู่กันได้อย่างไร
 
-### Global AGENTS.md (Foundation - à¸à¸Žà¸«à¸¥à¸±à¸)
+### Global AGENTS.md (Foundation - กฎหลัก)
 ```markdown
 <!-- ~/.config/opencode/AGENTS.md -->
 
 ## Universal Rules
-- **NO GUESSING** on OpenCode questions â†’ FETCH docs first
+- **NO GUESSING** on OpenCode questions → FETCH docs first
 - CITE sources with URLs
 - Default to Thai language
 - Run typecheck after TS changes
@@ -55,7 +55,7 @@
 - Test before push
 ```
 
-### Config `instructions` (Extensions - à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡/à¹€à¸‰à¸žà¸²à¸°à¹€à¸ˆà¸²à¸°à¸ˆà¸‡)
+### Config `instructions` (Extensions - เพิ่มเติม/เฉพาะเจาะจง)
 ```jsonc
 // ~/.config/opencode/opencode.json
 {
@@ -69,46 +69,46 @@
 
 ---
 
-## ðŸŽ¯ Decision Matrix: à¹ƒà¸ªà¹ˆà¸­à¸°à¹„à¸£à¹„à¸«à¸™?
+## 🎯 Decision Matrix: ใส่อะไรไหน?
 
-| à¹€à¸™à¸·à¹‰à¸­à¸«à¸² | à¹ƒà¸ªà¹ˆ AGENTS.md | à¹ƒà¸ªà¹ˆ instructions |
+| เนื้อหา | ใส่ AGENTS.md | ใส่ instructions |
 |----------|--------------|-----------------|
-| "No guessing on OpenCode" | âœ… | âŒ |
-| "Run `bun test` before commit" | âœ… | âŒ |
-| Team coding standards (10 pages) | âŒ | âœ… (file/URL) |
-| Architecture decision records | âŒ | âœ… (glob: `docs/adr/*.md`) |
-| Centralized company rules (update à¸—à¸¸à¸à¸—à¸µà¹ˆ) | âŒ | âœ… (URL) |
-| "User prefers Thai" | âœ… | âŒ |
-| Project-specific build commands | âŒ | âœ… (relative path) |
-| Security rules à¸—à¸¸à¸à¹‚à¸›à¸£à¹€à¸ˆà¸à¸•à¹Œ | âœ… | âŒ |
+| "No guessing on OpenCode" | ✅ | ❌ |
+| "Run `bun test` before commit" | ✅ | ❌ |
+| Team coding standards (10 pages) | ❌ | ✅ (file/URL) |
+| Architecture decision records | ❌ | ✅ (glob: `docs/adr/*.md`) |
+| Centralized company rules (update ทุกที่) | ❌ | ✅ (URL) |
+| "User prefers Thai" | ✅ | ❌ |
+| Project-specific build commands | ❌ | ✅ (relative path) |
+| Security rules ทุกโปรเจกต์ | ✅ | ❌ |
 
 ---
 
-## ðŸ“– à¸à¸Žà¸ªà¸£à¸¸à¸›: AGENTS.md = "Always", instructions = "Additionally"
+## 📖 กฎสรุป: AGENTS.md = "Always", instructions = "Additionally"
 
-| à¸„à¸³à¸–à¸²à¸¡ | à¸„à¸³à¸•à¸­à¸š |
+| คำถาม | คำตอบ |
 |--------|-------|
-| à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¹ƒà¸«à¹‰ **à¸—à¸¸à¸ session à¸—à¸¸à¸à¹‚à¸›à¸£à¹€à¸ˆà¸à¸•à¹Œ** à¸ˆà¸³à¹„à¸”à¹‰? | **AGENTS.md** |
-| à¸•à¹‰à¸­à¸‡à¸à¸²à¸£ **à¸«à¸¥à¸²à¸¢à¹„à¸Ÿà¸¥à¹Œ / URL / glob** à¸£à¸§à¸¡à¹€à¸‚à¹‰à¸²à¸”à¹‰à¸§à¸¢à¸à¸±à¸™? | **instructions** |
-| à¸•à¹‰à¸­à¸‡à¸à¸²à¸£ **hot reload** (à¹à¸à¹‰à¹à¸¥à¹‰à¸§à¹ƒà¸Šà¹‰à¹„à¸”à¹‰à¹€à¸¥à¸¢)? | **AGENTS.md** |
-| à¸•à¹‰à¸­à¸‡à¸à¸²à¸£ **override/extend** à¸à¸Žà¸ˆà¸²à¸ AGENTS.md? | **instructions** (à¹‚à¸«à¸¥à¸”à¸—à¸µà¸«à¸¥à¸±à¸‡) |
-| à¹„à¸Ÿà¸¥à¹Œà¸­à¸¢à¸¹à¹ˆà¹ƒà¸™ **repo/version control**? | **instructions** (relative path) |
-| à¹„à¸Ÿà¸¥à¹Œà¸­à¸¢à¸¹à¹ˆ **global/user-level**? | **AGENTS.md** |
+| ต้องการให้ **ทุก session ทุกโปรเจกต์** จำได้? | **AGENTS.md** |
+| ต้องการ **หลายไฟล์ / URL / glob** รวมเข้าด้วยกัน? | **instructions** |
+| ต้องการ **hot reload** (แก้แล้วใช้ได้เลย)? | **AGENTS.md** |
+| ต้องการ **override/extend** กฎจาก AGENTS.md? | **instructions** (โหลดทีหลัง) |
+| ไฟล์อยู่ใน **repo/version control**? | **instructions** (relative path) |
+| ไฟล์อยู่ **global/user-level**? | **AGENTS.md** |
 
 ---
 
-## ðŸ“ à¸ªà¸£à¸¸à¸›à¹à¸šà¸šà¸ªà¸±à¹‰à¸™
+## 📝 สรุปแบบสั้น
 
 ```
-AGENTS.md     â†’ "Constitution" (à¸à¸Žà¸«à¸¥à¸±à¸ à¸šà¸±à¸‡à¸„à¸±à¸šà¸—à¸¸à¸à¸—à¸µà¹ˆ à¹‚à¸«à¸¥à¸”à¸à¹ˆà¸­à¸™)
-instructions  â†’ "Amendments"  (à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡ à¸¢à¸·à¸”à¸«à¸¢à¸¸à¹ˆà¸™ à¹‚à¸«à¸¥à¸”à¸—à¸µà¸«à¸¥à¸±à¸‡)
+AGENTS.md     → "Constitution" (กฎหลัก บังคับทุกที่ โหลดก่อน)
+instructions  → "Amendments"  (เพิ่มเติม ยืดหยุ่น โหลดทีหลัง)
 ```
 
-**à¹à¸™à¸°à¸™à¸³:** à¹€à¸£à¸´à¹ˆà¸¡ `AGENTS.md` à¸à¹ˆà¸­à¸™ (foundation) â†’ à¹€à¸žà¸´à¹ˆà¸¡ `instructions` à¸•à¸­à¸™à¸•à¹‰à¸­à¸‡à¸à¸²à¸£ reference à¹„à¸Ÿà¸¥à¹Œ/URL à¹€à¸‰à¸žà¸²à¸°à¹€à¸ˆà¸²à¸°à¸ˆà¸‡
+**แนะนำ:** เริ่ม `AGENTS.md` ก่อน (foundation) → เพิ่ม `instructions` ตอนต้องการ reference ไฟล์/URL เฉพาะเจาะจง
 
 ---
 
-## ðŸ“š Key Docs References
+## 📚 Key Docs References
 
 | Topic | URL |
 |-------|-----|
