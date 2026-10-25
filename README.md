@@ -1,33 +1,33 @@
-﻿# OpenCode Global Rules
+# OpenCode Global Rules
 
 > **Purpose:** Enforce docs-first, no-guessing behavior for all OpenCode questions across all projects and sessions.
 
 ---
 
-## 🚫 MANDATORY: OpenCode Questions
+## ?? MANDATORY: OpenCode Questions
 
 **Before answering ANY question about OpenCode features/commands/config/flags:**
 
 1. **FETCH** docs from https://opencode.ai/v2/docs/ using webfetch or context7
 2. **CITE** the exact URL and section in your answer
-3. **NO GUESSING** — if docs don't cover it, state: *"docs don't specify"*
+3. **NO GUESSING** � if docs don't cover it, state: *"docs don't specify"*
 
 **Violation = User will call you out. Do not guess.**
 
 ---
 
-## 📋 Universal Rules
+## ?? Universal Rules
 
 - **Default language:** Thai (English only when requested)
 - **Run typecheck** after TypeScript changes
 - **Small commits**, clear messages
 - **Test before push**
-- **Never log/commit secrets** — use environment variables
+- **Never log/commit secrets** � use environment variables
 - **Use AGENTS.md for project-specific rules** (not in this repo)
 
 ---
 
-## 🔧 Config Reference
+## ?? Config Reference
 
 ### Global Config Location
 `
@@ -44,7 +44,7 @@
 1. Agent/provider system prompt
 2. Code Mode tool guidance
 3. MCP server, reference, skill guidance
-4. Global AGENTS.md → Project AGENTS.md (nearest-first)
+4. Global AGENTS.md ? Project AGENTS.md (nearest-first)
 5. Configured instructions (from config "instructions" array)
 6. Built-in date/env context
 7. Session-specific instructions
@@ -52,7 +52,7 @@
 
 ---
 
-## 📚 Key Docs References
+## ?? Key Docs References
 
 | Topic | URL |
 |-------|-----|
@@ -65,12 +65,12 @@
 
 ---
 
-## ⚙️ Recommended Global Config
+## ?? Recommended Global Config
 
 `jsonc
 // ~/.config/opencode/opencode.json
 {
-  "": "https://opencode.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "instructions": [
     "MANDATORY: Before answering ANY question about OpenCode features/commands/config/flags, FETCH docs from https://opencode.ai/v2/docs/ using webfetch. CITE the exact URL and section. If docs don't cover it, STATE 'docs don't specify' instead of guessing."
   ]
@@ -79,7 +79,7 @@
 
 ---
 
-## 📝 Recommended Global AGENTS.md
+## ?? Recommended Global AGENTS.md
 
 `markdown
 <!-- ~/.config/opencode/AGENTS.md -->
@@ -100,7 +100,7 @@
 
 ---
 
-## ✅ Verification Checklist
+## ? Verification Checklist
 
 Before answering OpenCode questions:
 - [ ] Fetched docs from opencode.ai/v2/docs/
