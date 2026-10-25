@@ -1,6 +1,6 @@
 ﻿# OpenCode: Global AGENTS.md vs Config \instructions\
 
-> **Purpose:** Clear comparison to decide where to put your rules.
+> **วัตถุประสงค์:** เปรียบเทียบชัดเจนเพื่อตัดสินใจว่าจะวางกฎไหนไว้ที่ไหน
 
 ---
 
@@ -8,12 +8,12 @@
 
 | กรณีใช้งาน | ตัวอย่าง |
 |------------|---------|
-| กฎพื้นฐานที่ต้องบังคับทุกโปรเจกต์ | \"Always fetch docs before answering OpenCode questions\" |
-| Code conventions ทั่วไป | \"Use 2 spaces indent, no semicolons in JS/TS\" |
-| Workflow บังคับ | \"Run tests before commit\", \"Run typecheck after changes\" |
-| Architecture principles | \"Keep business logic in domain layer, not controllers\" |
-| Security rules | \"Never commit secrets, use env vars\" |
-| สิ่งที่อยากให้ agent จำตลอดกาล | \"User prefers Thai responses\", \"User uses Windows PowerShell\" |
+| กฎพื้นฐานที่ต้องบังคับทุกโปรเจกต์ | \"ดึงเอกสารก่อนตอบคำถาม OpenCode ทุกครั้ง\" |
+| Code conventions ทั่วไป | \"อินเดนต์ 2 ช่องเว้น, ไม่ใช้ semicolon ใน JS/TS\" |
+| Workflow บังคับ | \"รันเทสต์ก่อนคอมมิต\", \"รัน typecheck หลังแก้โค้ด\" |
+| Architecture principles | \"เก็บ business logic ไว้ใน domain layer, อย่าไว้ controllers\" |
+| Security rules | \"อย่า commit secrets, ใช้ environment variables\" |
+| สิ่งที่อยากให้ agent จำตลอดกาล | \"ผู้ใช้ต้องการภาษาไทย\", \"ผู้ใช้ Windows PowerShell\" |
 
 **จุดเด่น:** Hot reload (แก้ไฟล์ → ใช้ได้ทันที), โหลดก่อนทุกอย่าง, ใช้ Markdown ธรรมดา
 
