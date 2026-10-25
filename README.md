@@ -1,4 +1,4 @@
-# OpenCode: Global AGENTS.md vs Config instructions
+# OpenCode: Global AGENTS.md vs Config `instructions`
 
 > **วัตถุประสงค์:** เปรียบเทียบชัดเจนเพื่อตัดสินใจว่าจะวางกฎไหนไว้ที่ไหน
 
@@ -19,7 +19,7 @@
 
 ---
 
-## ⚙️ instructions Array ใน Config — เหมาะกับอะไร
+## ⚙️ `instructions` Array ใน Config — เหมาะกับอะไร
 
 | กรณีใช้งาน | ตัวอย่าง |
 |------------|---------|
@@ -37,7 +37,7 @@
 ## 🔧 ตัวอย่างจริง: ใช้คู่กันได้อย่างไร
 
 ### Global AGENTS.md (Foundation - กฎหลัก)
-`markdown
+```markdown
 <!-- ~/.config/opencode/AGENTS.md -->
 
 ## Universal Rules
@@ -53,10 +53,10 @@
 ## Workflow
 - Small commits, clear messages
 - Test before push
-`
+```
 
-### Config instructions (Extensions - เพิ่มเติม/เฉพาะเจาะจง)
-`jsonc
+### Config `instructions` (Extensions - เพิ่มเติม/เฉพาะเจาะจง)
+```jsonc
 // ~/.config/opencode/opencode.json
 {
   "instructions": [
@@ -65,7 +65,7 @@
     "docs/architecture/*.md"                  // Project-specific (glob)
   ]
 }
-`
+```
 
 ---
 
@@ -74,9 +74,9 @@
 | เนื้อหา | ใส่ AGENTS.md | ใส่ instructions |
 |----------|--------------|-----------------|
 | "No guessing on OpenCode" | ✅ | ❌ |
-| "Run un test before commit" | ✅ | ❌ |
+| "Run `bun test` before commit" | ✅ | ❌ |
 | Team coding standards (10 pages) | ❌ | ✅ (file/URL) |
-| Architecture decision records | ❌ | ✅ (glob: docs/adr/*.md) |
+| Architecture decision records | ❌ | ✅ (glob: `docs/adr/*.md`) |
 | Centralized company rules (update ทุกที่) | ❌ | ✅ (URL) |
 | "User prefers Thai" | ✅ | ❌ |
 | Project-specific build commands | ❌ | ✅ (relative path) |
@@ -99,12 +99,12 @@
 
 ## 📝 สรุปแบบสั้น
 
-`
+```
 AGENTS.md     → "Constitution" (กฎหลัก บังคับทุกที่ โหลดก่อน)
 instructions  → "Amendments"  (เพิ่มเติม ยืดหยุ่น โหลดทีหลัง)
-`
+```
 
-**แนะนำ:** เริ่ม AGENTS.md ก่อน (foundation) → เพิ่ม instructions ตอนต้องการ reference ไฟล์/URL เฉพาะเจาะจง
+**แนะนำ:** เริ่ม `AGENTS.md` ก่อน (foundation) → เพิ่ม `instructions` ตอนต้องการ reference ไฟล์/URL เฉพาะเจาะจง
 
 ---
 
