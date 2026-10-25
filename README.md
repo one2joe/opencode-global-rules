@@ -1,4 +1,4 @@
-﻿# OpenCode: Global AGENTS.md vs Config \instructions\
+# OpenCode: Global AGENTS.md vs Config instructions
 
 > **วัตถุประสงค์:** เปรียบเทียบชัดเจนเพื่อตัดสินใจว่าจะวางกฎไหนไว้ที่ไหน
 
@@ -8,24 +8,24 @@
 
 | กรณีใช้งาน | ตัวอย่าง |
 |------------|---------|
-| กฎพื้นฐานที่ต้องบังคับทุกโปรเจกต์ | \"ดึงเอกสารก่อนตอบคำถาม OpenCode ทุกครั้ง\" |
-| Code conventions ทั่วไป | \"อินเดนต์ 2 ช่องเว้น, ไม่ใช้ semicolon ใน JS/TS\" |
-| Workflow บังคับ | \"รันเทสต์ก่อนคอมมิต\", \"รัน typecheck หลังแก้โค้ด\" |
-| Architecture principles | \"เก็บ business logic ไว้ใน domain layer, อย่าไว้ controllers\" |
-| Security rules | \"อย่า commit secrets, ใช้ environment variables\" |
-| สิ่งที่อยากให้ agent จำตลอดกาล | \"ผู้ใช้ต้องการภาษาไทย\", \"ผู้ใช้ Windows PowerShell\" |
+| กฎพื้นฐานที่ต้องบังคับทุกโปรเจกต์ | "ดึงเอกสารก่อนตอบคำถาม OpenCode ทุกครั้ง" |
+| Code conventions ทั่วไป | "อินเดนต์ 2 ช่องเว้น, ไม่ใช้ semicolon ใน JS/TS" |
+| Workflow บังคับ | "รันเทสต์ก่อนคอมมิต", "รัน typecheck หลังแก้โค้ด" |
+| Architecture principles | "เก็บ business logic ไว้ใน domain layer, อย่าไว้ controllers" |
+| Security rules | "อย่า commit secrets, ใช้ environment variables" |
+| สิ่งที่อยากให้ agent จำตลอดกาล | "ผู้ใช้ต้องการภาษาไทย", "ผู้ใช้ Windows PowerShell" |
 
 **จุดเด่น:** Hot reload (แก้ไฟล์ → ใช้ได้ทันที), โหลดก่อนทุกอย่าง, ใช้ Markdown ธรรมดา
 
 ---
 
-## ⚙️ \instructions\ Array ใน Config — เหมาะกับอะไร
+## ⚙️ instructions Array ใน Config — เหมาะกับอะไร
 
 | กรณีใช้งาน | ตัวอย่าง |
 |------------|---------|
-| อ้างอิงไฟล์เฉพาะเจาะจงหลายไฟล์ | \\"CONTRIBUTING.md\", \"docs/coding-standards.md\", \"docs/git-workflow.md\"\ |
-| ใช้ Glob pattern | \\"docs/guidelines/*.md\", \"**/RULES.md\"\ |
-| ดึงจาก Remote URL | \\"https://company.com/opencode-rules.md\", \"https://api.internal/rules?team=backend\"\ |
+| อ้างอิงไฟล์เฉพาะเจาะจงหลายไฟล์ | "CONTRIBUTING.md", "docs/coding-standards.md", "docs/git-workflow.md" |
+| ใช้ Glob pattern | "docs/guidelines/*.md", "**/RULES.md" |
+| ดึงจาก Remote URL | "https://company.com/opencode-rules.md", "https://api.internal/rules?team=backend" |
 | Centralized rules ที่ update แบบ centralized | URL ชี้ไป internal wiki — update ที่นั่นทุกที่ได้รับอัปเดต |
 | Supplement เฉพาะโปรเจกต์บน global rules | Global AGENTS.md มีกฎทั่วไป → instructions เพิ่มโปรเจกต์เฉพาะ |
 | สิ่งที่อยาก version control แยกจาก AGENTS.md | Config file อยู่ใน git, AGENTS.md อยู่ใน global (ไม่ commit) |
@@ -37,7 +37,7 @@
 ## 🔧 ตัวอย่างจริง: ใช้คู่กันได้อย่างไร
 
 ### Global AGENTS.md (Foundation - กฎหลัก)
-\\\markdown
+`markdown
 <!-- ~/.config/opencode/AGENTS.md -->
 
 ## Universal Rules
@@ -53,19 +53,19 @@
 ## Workflow
 - Small commits, clear messages
 - Test before push
-\\\
+`
 
-### Config \instructions\ (Extensions - เพิ่มเติม/เฉพาะเจาะจง)
-\\\jsonc
+### Config instructions (Extensions - เพิ่มเติม/เฉพาะเจาะจง)
+`jsonc
 // ~/.config/opencode/opencode.json
 {
-  \"instructions\": [
-    \"~/rules/team-conventions.md\",           // Team-specific (local file)
-    \"https://wiki.company.com/opencode-rules\", // Centralized (remote URL)
-    \"docs/architecture/*.md\"                  // Project-specific (glob)
+  "instructions": [
+    "~/rules/team-conventions.md",           // Team-specific (local file)
+    "https://wiki.company.com/opencode-rules", // Centralized (remote URL)
+    "docs/architecture/*.md"                  // Project-specific (glob)
   ]
 }
-\\\
+`
 
 ---
 
@@ -73,18 +73,18 @@
 
 | เนื้อหา | ใส่ AGENTS.md | ใส่ instructions |
 |----------|--------------|-----------------|
-| \"No guessing on OpenCode\" | ✅ | ❌ |
-| \"Run \un test\ before commit\" | ✅ | ❌ |
+| "No guessing on OpenCode" | ✅ | ❌ |
+| "Run un test before commit" | ✅ | ❌ |
 | Team coding standards (10 pages) | ❌ | ✅ (file/URL) |
-| Architecture decision records | ❌ | ✅ (glob: \docs/adr/*.md\) |
+| Architecture decision records | ❌ | ✅ (glob: docs/adr/*.md) |
 | Centralized company rules (update ทุกที่) | ❌ | ✅ (URL) |
-| \"User prefers Thai\" | ✅ | ❌ |
+| "User prefers Thai" | ✅ | ❌ |
 | Project-specific build commands | ❌ | ✅ (relative path) |
 | Security rules ทุกโปรเจกต์ | ✅ | ❌ |
 
 ---
 
-## 📖 กฎสรุป: AGENTS.md = \"Always\", instructions = \"Additionally\"
+## 📖 กฎสรุป: AGENTS.md = "Always", instructions = "Additionally"
 
 | คำถาม | คำตอบ |
 |--------|-------|
@@ -99,12 +99,12 @@
 
 ## 📝 สรุปแบบสั้น
 
-\\\
-AGENTS.md     → \"Constitution\" (กฎหลัก บังคับทุกที่ โหลดก่อน)
-instructions  → \"Amendments\"  (เพิ่มเติม ยืดหยุ่น โหลดทีหลัง)
-\\\
+`
+AGENTS.md     → "Constitution" (กฎหลัก บังคับทุกที่ โหลดก่อน)
+instructions  → "Amendments"  (เพิ่มเติม ยืดหยุ่น โหลดทีหลัง)
+`
 
-**แนะนำ:** เริ่ม \AGENTS.md\ ก่อน (foundation) → เพิ่ม \instructions\ ตอนต้องการ reference ไฟล์/URL เฉพาะเจาะจง
+**แนะนำ:** เริ่ม AGENTS.md ก่อน (foundation) → เพิ่ม instructions ตอนต้องการ reference ไฟล์/URL เฉพาะเจาะจง
 
 ---
 
